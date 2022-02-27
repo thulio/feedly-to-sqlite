@@ -51,7 +51,13 @@ def auth(auth, developer_token):
     click.echo()
 
 
-COLLECTION_KEYS = ["label", "created", "id"]
+COLLECTION_KEYS = [
+    "label",
+    "created",
+    "id",
+    "description",
+    "cover",
+]
 FEED_KEYS = [
     "id",
     "topics",
@@ -61,6 +67,9 @@ FEED_KEYS = [
     "language",
     "state",
     "description",
+    "velocity",
+    "subscribers",
+    "added",
 ]
 
 
@@ -92,7 +101,7 @@ def subscriptions(db_path, auth):
     click.echo("Downloading subscriptions")
     r = requests.get(
         FEEDLY_API_URL + "/v3/collections",
-        headers={"Authorization": "Bearer {}".format(token)},
+        headers={"Authorization": f"Bearer {token}"},
     )
     r.raise_for_status()
 

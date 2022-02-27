@@ -29,8 +29,10 @@ setup(
         "Development Status :: 5 - Production/Stable",
         "Environment :: Console",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
         "Topic :: Database",
     ],
     keywords="feedly sqlite export dogsheep",
@@ -40,7 +42,7 @@ setup(
         [console_scripts]
         feedly-to-sqlite=feedly_to_sqlite.cli:cli
     """,
-    install_requires=["click", "requests", "sqlite-utils~=1.11", "tqdm~=4.36"],
+    install_requires=["click", "requests", "sqlite-utils"],
     extras_require={"test": ["pytest"]},
     tests_require=["feedly-to-sqlite[test]"],
 )
